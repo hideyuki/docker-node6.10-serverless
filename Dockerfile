@@ -47,8 +47,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 # Install serverlees@1.14.0
-RUN npm install serverless@1.14.0
-
+RUN npm install -g serverless@1.14.0
 
 CMD [ "node" ]
 
