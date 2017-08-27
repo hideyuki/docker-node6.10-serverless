@@ -1,9 +1,9 @@
-FROM buildpack-deps:wheezy
+FROM ubuntu:16.04
 MAINTAINER Hideyuki Takei <takehide22@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
-RUN apt-get -yq install python-pip
+RUN apt-get -yq install python python-pip
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install aws cli
