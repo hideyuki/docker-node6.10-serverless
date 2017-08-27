@@ -6,6 +6,9 @@ RUN apt-get update
 RUN apt-get -yq install python-pip
 RUN rm -rf /var/lib/apt/lists/*
 
+# Install aws cli
+RUN pip install awscli
+
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
@@ -42,9 +45,6 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && tar -xJf "node-v$NODE_VERSION-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1 \
   && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
-
-# Install aws cli
-RUN pip install awscli
 
 # Install serverlees@1.14.0
 RUN npm install serverless@1.14.0
