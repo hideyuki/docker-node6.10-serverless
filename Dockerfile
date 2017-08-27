@@ -44,7 +44,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 # Install aws cli
-pip install awscli
+RUN pip install awscli
 
 CMD [ "node" ]
 
