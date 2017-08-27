@@ -46,5 +46,9 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
 # Install aws cli
 RUN pip install awscli
 
+# Install serverlees@1.14.0
+RUN npm install serverless@1.14.0
+
+
 CMD [ "node" ]
 
