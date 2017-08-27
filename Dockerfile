@@ -3,7 +3,7 @@ MAINTAINER Hideyuki Takei <takehide22@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
-RUN apt-get -yq install pip-python
+RUN apt-get -yq install python-pip
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN groupadd --gid 1000 node \
